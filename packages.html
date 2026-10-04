@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Packages — Ausmate Properties</title>
+<meta name="description" content="Browse live house and land packages across Victoria by area, bedrooms and budget."><link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/listing.css"></head><body>
+<div class="topline">Live builder-partner pricing · Confirm before you commit</div>
+<div class="topbar"><a class="brand" href="index.html" style="text-decoration:none"><div class="logo">A.</div><div><b>Ausmate Properties</b><small>Build with confidence</small></div></a>
+<div class="top-actions"><a class="phone" href="tel:0430200150">0430 200 150</a><a class="btn" href="contact.html">Send an enquiry</a></div></div>
+<nav class="main"><a href="index.html">Home</a><a class="active" href="packages.html">Packages</a><a href="loan-advice.html">Loan advice</a><a href="tax-advice.html">Tax advice</a><a href="calculators.html">Calculators</a><a href="contact.html">Contact</a></nav>
+<div class="wrap listing-wrap">
+<div class="sec-head" style="margin-top:26px"><div><h2>House and land packages</h2><p>Grouped by corridor. Open any package for flyer, floor plan, lot details and inclusions.</p></div></div>
+<div class="filters listing-filters">
+<div><label for="f-state">State</label><select id="f-state"><option value="">All states</option><option>Victoria</option><option>New South Wales</option></select></div>
+<div><label for="f-type">Showing</label><select id="f-type"><option value="house">House & land</option><option value="land">Land only</option><option value="coliving">Co-living investment</option></select></div>
+<div><label for="f-area">Area</label><select id="f-area"><option value="">All areas</option><option>Geelong</option><option>Melbourne West</option><option>Melbourne North</option><option>Melbourne South-East</option><option>Regional Victoria</option><option>Bendigo</option></select></div>
+<div><label for="f-beds">Bedrooms</label><select id="f-beds"><option value="">Any bedrooms</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option><option value="6">6</option></select></div>
+<div><label for="f-price">Max price</label><select id="f-price"><option value="">Any price</option><option value="600000">Up to $600k</option><option value="700000">Up to $700k</option><option value="800000">Up to $800k</option><option value="900000">Up to $900k</option><option value="1000000">Up to $1m</option></select></div>
+<div class="f-search"><label for="f-q">Search</label><input type="search" id="f-q" placeholder="Estate, suburb, design…" autocomplete="off" aria-label="Search by estate, suburb or design"></div>
+<div class="f-clear-wrap"><label for="f-clear">&nbsp;</label><button type="button" class="btn secondary" id="f-clear" style="width:100%">Clear</button></div>
+</div>
+<div id="chips" aria-live="polite"></div>
+<div class="toolbar listing-toolbar"><p class="count" id="count" style="margin:0" role="status" aria-live="polite"></p><div class="toolbar-actions"><button type="button" class="btn secondary" id="incl-open" style="padding:10px 18px;font-size:13px" aria-haspopup="dialog">Standard inclusions</button><label class="sortbox">Sort <select id="f-sort" aria-label="Sort packages"><option value="rec">Recommended</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="land">Land: biggest first</option></select></label></div></div>
+<div id="list" class="listing-list" aria-live="polite"></div>
+<div class="notice">“From” prices use a site-cost allowance and may change after site investigation. Prices exclude stamp duty, legal, bank and government charges unless stated. First home buyer prices are as shown on the builder's flyer and depend on eligibility. Availability changes quickly — call 0430 200 150.</div>
+</div>
+<dialog id="incl" class="incl-dialog" style="border:1px solid #e8e8e3;border-radius:20px;max-width:580px;padding:30px" aria-label="What standard inclusions means" aria-modal="true">
+<h3 style="margin-top:0">What “standard inclusions” means</h3>
+<p class="sub">Every builder, design and promotion differs — this is a checklist for comparing flyers, not a promise. Always confirm against the flyer for your exact lot.</p>
+<div class="incl-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0">
+<div><b>Often in the build price</b><p class="sub">Floor coverings · kitchen appliances · heating & cooling · energy-rating items · standard facade · internal paint</p></div>
+<div><b>Often excluded / site-specific</b><p class="sub">Site costs & retaining · driveway · fencing & landscaping · letterbox · blinds · facade upgrades</p></div>
+</div>
+<p class="sub"><b>Fixed vs “from”:</b> fixed prices are as stated by the builder; “from” prices use a site-cost allowance and can move after soil and site investigation.</p>
+<p class="incl-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="contact.html?message=Please%20send%20me%20the%20standard%20inclusions%20list">Ask for the inclusions list</a><button type="button" class="btn secondary" id="incl-close">Close</button></p>
+</dialog>
+<div class="footer"><div class="wrap"><div><div class="flogo">Ausmate Properties</div><p style="font-size:14px;line-height:2">0430 200 150 · info@ausmateproperties.com.au</p></div><div><h4>Explore</h4><p><a href="index.html">Home</a><br><a href="calculators.html">Calculators</a><br><a href="contact.html">Enquire</a></p></div><div><h4>Advice</h4><p><a href="loan-advice.html">Loan advice</a><br><a href="tax-advice.html">Tax advice</a></p></div></div><div class="copy">© Ausmate Properties · General information only.</div></div>
+<script src="js/packages-geelong.js"></script><script src="js/packages-west.js"></script><script src="js/packages-north-se.js"></script><script src="js/packages-regional.js"></script><script src="js/app.js"></script>
+<script>(function(){var dg=document.getElementById("incl");if(!dg||dg.dataset.a11y)return;dg.dataset.a11y="1";var openBtn=document.getElementById("incl-open");var closeBtn=document.getElementById("incl-close");var lastFocus=null;function open(){lastFocus=document.activeElement;if(!dg.open)dg.showModal();if(closeBtn)closeBtn.focus();}function close(){if(dg.open)dg.close();}if(openBtn)openBtn.addEventListener("click",open);if(closeBtn)closeBtn.addEventListener("click",close);dg.addEventListener("click",function(e){if(e.target===dg)close();});dg.addEventListener("close",function(){if(lastFocus&&document.contains(lastFocus))lastFocus.focus();});})();</script>
+</body></html>

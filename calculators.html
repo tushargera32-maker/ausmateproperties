@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculators — Ausmate Properties</title>
+<meta name="description" content="Mortgage, investment tax benefit and stamp duty estimators for Victorian house and land packages."><link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/calcs.css"></head><body>
+<div class="topline">Estimators only — confirm with your lender, broker or accountant</div>
+<div class="topbar"><a class="brand" href="index.html" style="text-decoration:none"><div class="logo">A.</div><div><b>Ausmate Properties</b><small>Build with confidence</small></div></a><div class="top-actions"><a class="phone" href="tel:0430200150">0430 200 150</a><a class="btn" href="contact.html">Send an enquiry</a></div></div>
+<nav class="main"><a href="index.html">Home</a><a href="packages.html">Packages</a><a href="loan-advice.html">Loan advice</a><a href="tax-advice.html">Tax advice</a><a class="active" href="calculators.html">Calculators</a><a href="contact.html">Contact</a></nav>
+<div class="wrap">
+<div class="sec-head" style="margin-top:26px"><div><h2>Repayment & investment calculators</h2><p>Quick estimators to sanity-check a purchase before we run the numbers properly together.</p></div></div>
+<div class="tabs"><a href="#mortgage" data-tab="mortgage">Mortgage calculator</a><a href="#investment" data-tab="investment">Investment tax benefit calculator</a><a href="#stampduty" data-tab="stampduty">Stamp duty calculator</a></div>
+<!-- MORTGAGE -->
+<section class="panel" id="panel-m"><div class="calc">
+<h3>Mortgage calculator</h3><p class="sub">Estimate your regular repayment on a principal & interest or interest-only loan.</p>
+<div class="fgrid" style="margin-top:16px">
+<label class="field field--money">Loan amount<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="m-amt" type="text" inputmode="decimal" placeholder="600,000" value="600000" min="0"></span></label>
+<label class="field field--pct">Interest rate (% p.a.)<span class="control"><input id="m-rate" type="text" inputmode="decimal" placeholder="6.10" value="6.10" min="0"><span class="adorn adorn--right" aria-hidden="true">%</span></span></label>
+<label class="field field--yrs">Loan term (years)<span class="control"><input id="m-term" type="text" inputmode="numeric" placeholder="30" value="30" min="1" max="40"><span class="adorn adorn--right" aria-hidden="true">yrs</span></span></label>
+<label class="field field--yrs">Interest-only period (years, 0 if none)<span class="control"><input id="m-io" type="text" inputmode="decimal" placeholder="0" value="0" min="0" max="15"><span class="adorn adorn--right" aria-hidden="true">yrs</span></span></label>
+<div><label>Repayment type</label><div class="seg" id="m-type" role="group" aria-label="Repayment type"><button data-v="pi" class="on" aria-pressed="true">Principal &amp; interest</button><button data-v="io" aria-pressed="false">Interest only</button></div><p class="micro">Principal &amp; interest pays down the loan. Interest only pays no principal — the full loan is still owed at the end.</p></div>
+<div><label>Repayment frequency</label><div class="seg" id="m-freq" role="group" aria-label="Repayment frequency"><button data-v="m" class="on" aria-pressed="true">Monthly</button><button data-v="f" aria-pressed="false">Fortnightly</button><button data-v="w" aria-pressed="false">Weekly</button></div><p class="micro">Fortnightly = rate ÷ 26 over 26 pays/yr. Weekly = rate ÷ 52 over 52 pays/yr. Nominal-rate estimate.</p></div>
+</div>
+<small class="verr" id="m-err" role="alert"></small>
+<div class="out"><div class="big" id="m-pay">$0</div><div class="sub" style="color:#a9bcd2" id="m-per">per month</div>
+<div class="rows"><div class="r"><span id="m-tint-l">Total interest</span><span id="m-tint">$0</span></div>
+<div class="r" id="m-trep-row"><span>Total repaid</span><span id="m-trep">$0</span></div></div></div>
+<p class="fine">Simple estimate at a fixed rate for the life of the loan. Excludes lender fees, offset, redraw, rate changes and LMI. <span id="m-note"></span></p>
+<p><a class="btn" id="m-cta" href="contact.html">Get a real quote from us</a></p>
+</div></section>
+<!-- INVESTMENT -->
+<section class="panel" id="panel-i"><div class="calc">
+<h3>Investment property tax benefit calculator</h3><p class="sub">A rough estimate of a rental property's cashflow and tax effect. General information only — not tax or financial advice for your situation.</p>
+<div class="fgrid" style="margin-top:16px">
+<label class="field field--money">Property value (land + build)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-prop" type="text" inputmode="decimal" placeholder="750,000" value="750000" min="0"></span></label>
+<label class="field field--money">Build cost only (for depreciation)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-build" type="text" inputmode="decimal" placeholder="380,000" value="380000" min="0"></span></label>
+<label class="field field--money">Loan amount<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-loan" type="text" inputmode="decimal" placeholder="712,500" value="712500" min="0"></span></label>
+<label class="field field--pct">Interest rate (% p.a., interest-only)<span class="control"><input id="i-rate" type="text" inputmode="decimal" placeholder="6.30" value="6.30" min="0"><span class="adorn adorn--right" aria-hidden="true">%</span></span></label>
+<label class="field field--money-wk">Rent ($ per week)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-rent" type="text" inputmode="decimal" placeholder="480" value="480" min="0"><span class="adorn adorn--right" aria-hidden="true">/wk</span></span></label>
+<label class="field field--wks">Vacancy allowance (weeks per year)<span class="control"><input id="i-vac" type="text" inputmode="decimal" placeholder="2" value="2" min="0" max="52"><span class="adorn adorn--right" aria-hidden="true">wks</span></span></label>
+<label class="field field--pct">Property management (% of rent)<span class="control"><input id="i-mgmt" type="text" inputmode="decimal" placeholder="7" value="7" min="0"><span class="adorn adorn--right" aria-hidden="true">%</span></span></label>
+<label class="field field--money-pa">Rates, insurance, maintenance & other costs ($ p.a.)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-other" type="text" inputmode="decimal" placeholder="4,200" value="4200" min="0"></span></label>
+<label class="field field--money-pa">Estimated depreciation ($ p.a., Div 40 + Div 43)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-dep" type="text" inputmode="decimal" placeholder="11,500" value="11500" min="0"></span></label>
+<label class="field field--money-pa">Your taxable income before this property ($ p.a.)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="i-inc" type="text" inputmode="decimal" placeholder="110,000" value="110000" min="0"></span></label>
+</div>
+<small class="verr" id="i-err" role="alert"></small>
+<div class="out"><div class="big neg" id="i-week">$0</div><div class="sub" style="color:#a9bcd2" id="i-sub">estimated after-tax cost/benefit per week</div><div class="ibars" id="i-bars" aria-hidden="true"></div><div class="rows" id="i-rows"></div></div>
+<p class="fine">Uses 2026-27 Australian resident individual tax rates plus the 2% Medicare levy to estimate your marginal rate, and assumes the loan is interest-only for this estimate. Ignores stamp duty, borrowing costs, capital gains, land tax, the Medicare levy surcharge, and any other income or deductions you have. Depreciation should come from a quantity surveyor's schedule for the actual property. Speak with your accountant before deciding — we can help arrange that.</p>
+<p><a class="btn" id="i-cta" href="contact.html">Talk to us about this property</a></p>
+</div></section>
+<!-- STAMP DUTY -->
+<section class="panel" id="panel-s"><div class="calc">
+<h3>Stamp duty calculator — all states & territories</h3><p class="sub">Standard transfer duty plus registration fees, anywhere in Australia. General rate schedule only — no first-home, foreign or off-the-plan concessions applied.</p>
+<div class="fgrid" style="margin-top:16px">
+<label class="field">State / territory<span class="control control--select"><select id="s-state"></select></span></label>
+<label class="field field--money">Property price (dutiable value)<span class="control"><span class="adorn adorn--left" aria-hidden="true">$</span><input id="s-price" type="text" inputmode="decimal" placeholder="700,000" value="700000" min="0"></span></label>
+<div><label>Buying to</label><div class="seg" id="s-use" role="group" aria-label="Buying purpose"><button data-v="live" class="on" aria-pressed="true">Live in</button><button data-v="invest" aria-pressed="false">Invest</button></div><p class="micro">Purpose doesn't change this general-rate estimate — it helps us check concessions for you. Foreign surcharges excluded.</p></div>
+<div><label>&nbsp;</label><a class="btn secondary" id="s-cta" style="width:100%;text-align:center" href="contact.html">Check my exact duty</a></div>
+</div>
+<div class="out"><div class="big" id="s-total">$0</div><div class="sub" style="color:#a9bcd2" id="s-sub">estimated upfront government cost</div>
+<div class="rows"><div class="r"><span>Property price</span><span id="s-price2">$0</span></div>
+<div class="r"><span>Stamp duty</span><span id="s-duty">$0</span></div>
+<div class="r"><span>Transfer registration fee</span><span id="s-tfee">$0</span></div>
+<div class="r"><span>Mortgage registration fee</span><span id="s-mfee">$0</span></div>
+<div class="r"><span>Effective duty rate (duty ÷ price, excl. fees)</span><span id="s-eff">0%</span></div>
+<div class="r"><span>First Home Owner Grant</span><span id="s-fhog">$0</span></div></div></div>
+<small class="verr" id="s-err" role="alert"></small>
+<p class="fine" id="s-fnote"></p>
+<p class="fine">General rate schedules only — 2026-27 rates and current published First Home Owner Grant amounts. Excludes first-home stamp duty exemptions/concessions (only the cash grant is shown), foreign purchaser surcharges, off-the-plan concessions and vacant-land thresholds. Registration fees are indicative. Ask us to check what you'd actually pay, including any duty concession you may qualify for.</p>
+</div></section>
+</div>
+<div class="footer"><div class="wrap"><div><div class="flogo">Ausmate Properties</div><p style="font-size:14px">0430 200 150 · info@ausmateproperties.com.au</p></div><div><h4>Explore</h4><p><a href="packages.html">Packages</a><br><a href="loan-advice.html">Loan advice</a></p></div><div><h4>Next</h4><p><a href="tax-advice.html">Tax advice</a><br><a href="contact.html">Enquire</a></p></div></div><div class="copy">© Ausmate Properties · General information only.</div></div>
+<script src="js/duty.js"></script><script src="js/calcs.js"></script>
+</body></html>

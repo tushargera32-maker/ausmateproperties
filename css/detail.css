@@ -1,0 +1,224 @@
+/* detail.css — package-detail transformation. Loaded AFTER css/styles.css. Light premium theme. Reuses base classes. */
+.dt-page .wrap{max-width:1240px}
+.crumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.crumb a{text-decoration:none}
+
+/* ---------- 1. cinematic gallery band ---------- */
+.gal.dt-hero{
+  min-height:430px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  background:#0e1e33;
+  align-items:stretch;
+  isolation:isolate;
+}
+.dt-hero .dt-art{--ph:linear-gradient(135deg,#d7e5f6,#f2eee2)}
+.dt-hero .pk-art{background-color:#dfe8f3}
+.dt-hero-shade{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(560px 260px at 82% 6%,rgba(11,99,229,.38),transparent 62%),
+    radial-gradient(420px 300px at 8% 100%,rgba(14,30,51,.5),transparent 60%),
+    linear-gradient(180deg,rgba(10,22,38,.18) 0%,rgba(10,22,38,.05) 34%,rgba(10,22,38,.14) 58%,rgba(10,22,38,.78) 100%);
+}
+.dt-hero-shade::after{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(600px 320px at 70% 20%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(600px 320px at 70% 20%,#000 30%,transparent 75%);
+}
+.dt-hero-top{
+  position:absolute;top:18px;left:18px;right:18px;z-index:3;
+  display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.dt-hero-top .pk-status{position:static;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+.dt-lotpill{
+  font-size:12px;font-weight:700;letter-spacing:.04em;
+  background:rgba(10,22,38,.68);color:#fff;border:1px solid rgba(255,255,255,.22);
+  padding:8px 14px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+}
+.gal .tx.dt-hero-tx{
+  margin-top:auto;
+  padding:84px 28px 24px;
+  background:linear-gradient(transparent,rgba(10,22,38,.82) 62%);
+}
+.dt-kicker{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#cfe0f7;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:7px 12px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.dt-title{
+  margin:14px 0 8px !important;
+  font-size:clamp(34px,5.2vw,58px) !important;
+  line-height:1.02 !important;letter-spacing:-.03em !important;
+  max-width:14ch;text-wrap:balance;
+}
+.dt-sub{margin:0;color:#d6e1ee;font-size:14px;font-weight:500}
+.dt-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.dt-facts span{
+  font-size:12.5px;font-weight:700;color:#fff;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
+  padding:8px 13px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  white-space:nowrap;
+}
+.dt-facts span:first-child{background:#fff;color:var(--ink);border-color:#fff}
+
+/* ---------- 2. spec bento ---------- */
+.spec-grid.dt-bento{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;margin:16px 0 20px;
+}
+.dt-bento .spec{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 16px 15px;
+  position:relative;overflow:hidden;transition:transform .2s cubic-bezier(.22,.61,.36,1),box-shadow .2s;
+  min-width:0;
+}
+.dt-bento .spec::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line);
+}
+.dt-bento .spec:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(14,30,51,.4)}
+.dt-bento .spec small{font-size:10.5px}
+.dt-bento .spec b{font-size:20px;overflow-wrap:break-word}
+.dt-bento .spec .sub{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.dt-bento .dt-spec--hero{
+  grid-column:span 2;background:var(--ink);color:#fff;border-color:var(--ink);
+  background-image:radial-gradient(280px 140px at 90% 0%,rgba(11,99,229,.5),transparent 65%);
+}
+.dt-bento .dt-spec--hero::before{background:var(--accent)}
+.dt-bento .dt-spec--hero small{color:#9db4cc}
+.dt-bento .dt-spec--hero b{font-size:28px}
+.dt-bento .dt-spec--hero .sub{color:#a9bcd2}
+
+/* ---------- 3. lot card + checkout sidebar ---------- */
+.detail-grid.dt-layout{gap:22px}
+.card.dt-lot{padding:26px}
+.dt-lot-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.dt-lot-head h3{font-size:22px}
+.dt-lot-head .sub{margin:0}
+.kv.dt-kv{margin-top:12px}
+.kv.dt-kv dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.kv.dt-kv dd{font-size:14.5px}
+.kv.dt-kv dt,.kv.dt-kv dd{padding:10px 0;border-top:1px solid #efefea}
+.kv.dt-kv dt:nth-of-type(1),.kv.dt-kv dt:nth-of-type(1)+dd{border-top:0}
+.dt-incl{
+  margin:16px 0 0;background:#f5f5f3;border:1px dashed #d8d8d1;border-radius:14px;
+  padding:13px 15px;font-size:13.5px;color:var(--ink2);line-height:1.6;
+}
+.dt-incl b{color:var(--ink);font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px}
+
+.card.side-card.dt-side{
+  padding:26px;border-radius:24px;
+  box-shadow:0 24px 50px -28px rgba(14,30,51,.35);
+  border-top:4px solid var(--accent);
+}
+.dt-side-eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+.dt-side-price h3{font-size:34px;letter-spacing:-.02em;margin:6px 0 2px;font-family:var(--font-d)}
+.dt-side-price .sub{margin:0}
+.dt-side-spec{
+  margin:12px 0 0;font-size:13px;font-weight:700;color:var(--ink);
+  background:#f1f4f8;border-radius:12px;padding:10px 13px;line-height:1.5;
+}
+.dt-side-btns{display:grid;gap:10px;margin:16px 0 4px}
+.dt-side-btns .btn{width:100%;text-align:center;min-height:50px}
+.dt-side-div{border:0;border-top:1px solid var(--line);margin:16px 0}
+.dt-steps{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.dt-steps li{position:relative;padding:0 0 16px 40px;font-size:13.5px;color:var(--ink2);line-height:1.55}
+.dt-steps li:last-child{padding-bottom:0}
+.dt-steps li::before{
+  content:attr(data-n);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+.dt-steps li::after{content:"";position:absolute;left:12.5px;top:30px;bottom:2px;width:1.5px;background:var(--line)}
+.dt-steps li:last-child::after{display:none}
+.dt-steps b{display:block;color:var(--ink);font-size:14px}
+.dt-map{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;font-size:14px;
+  color:var(--accent);text-decoration:none;text-underline-offset:3px;
+}
+.dt-map:hover{text-decoration:underline}
+.dt-side-note{margin:12px 0 0;background:#fafaf8;border:1px solid var(--line);border-radius:12px;padding:10px 13px}
+
+/* ---------- 4. more-in-estate rail ---------- */
+.dt-more{margin-top:8px}
+.dt-more-head{margin-top:38px}
+.dt-rail{scroll-padding:16px}
+
+/* ---------- 6. designed not-found ---------- */
+.card.dt-missing{
+  padding:0;overflow:hidden;text-align:center;
+  border-radius:26px;box-shadow:var(--shadow);
+}
+.dt-missing-art{
+  height:150px;background:
+    radial-gradient(420px 180px at 50% 0%,rgba(11,99,229,.22),transparent 65%),
+    linear-gradient(135deg,#d7e5f6,#f2eee2);
+  position:relative;border-bottom:1px solid var(--line);
+}
+.dt-missing-art::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(14,30,51,.16) 1.2px,transparent 1.2px);background-size:18px 18px;
+}
+.dt-missing-art::after{
+  content:"?";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:64px;height:64px;border-radius:50%;background:var(--ink);color:#fff;
+  font-family:var(--font-d);font-weight:700;font-size:30px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 16px 30px -14px rgba(14,30,51,.6);
+}
+.dt-missing-body{padding:30px 28px 32px}
+.dt-missing-body h2{font-size:28px;margin:0}
+.dt-missing-body p{color:var(--muted);font-size:14.5px;max-width:52ch;margin:10px auto 0}
+.dt-missing-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+/* notice refinement (keeps .notice base) */
+.notice.dt-note{border-radius:14px}
+
+/* ---------- 5. mobile: 390px safe, mcta refined ---------- */
+@media(max-width:900px){
+  .gal.dt-hero{min-height:0}
+  .gal .tx.dt-hero-tx{padding:72px 20px 20px}
+  .dt-title{max-width:none}
+  .spec-grid.dt-bento{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dt-bento .dt-spec--hero{grid-column:span 3}
+  /* swipeable rail */
+  .dt-rail{
+    display:grid;grid-auto-flow:column;grid-auto-columns:min(80%,310px);
+    overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:0 -16px;padding:4px 16px 14px;
+  }
+  .dt-rail .pk{scroll-snap-align:start}
+  .dt-more-head{flex-direction:row;align-items:end}
+  body.has-mcta{padding-bottom:92px}
+  .mcta{
+    left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));
+    border-radius:20px;padding:10px;
+  }
+  .mcta a{min-height:52px;font-size:15px}
+}
+@media(max-width:560px){
+  .spec-grid.dt-bento{grid-template-columns:1fr 1fr}
+  .dt-bento .dt-spec--hero{grid-column:span 2}
+  .dt-bento .spec b{font-size:18px}
+  .dt-bento .dt-spec--hero b{font-size:26px}
+  .card.dt-lot,.card.side-card.dt-side{padding:20px}
+  .kv.dt-kv{grid-template-columns:1fr;gap:0}
+  .kv.dt-kv dt{margin-top:0;padding-bottom:0;border-top:1px solid #efefea}
+  .kv.dt-kv dt:nth-of-type(1){border-top:0}
+  .kv.dt-kv dd{padding-top:2px}
+}
+@media(max-width:390px){
+  .dt-hero-top{top:12px;left:12px;right:12px;gap:8px}
+  .gal .tx.dt-hero-tx{padding:64px 16px 18px}
+  .dt-kicker{font-size:10.5px;max-width:100%;white-space:normal}
+  .dt-title{font-size:clamp(29px,9vw,34px) !important;line-height:1.06 !important}
+  .dt-sub{font-size:13px}
+  .dt-facts{gap:7px}
+  .dt-facts span{font-size:12px;white-space:normal}
+  .spec-grid.dt-bento{grid-template-columns:1fr 1fr;gap:10px}
+  .dt-side-price h3{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .dt-bento .spec:hover{transform:none}
+}
