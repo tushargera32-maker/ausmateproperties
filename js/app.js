@@ -31,7 +31,7 @@ const feats=(p.features||[]).slice(0,2).map(x=>`<span class="pill">${x}</span>`)
 const storeyShort=p.storeys?p.storeys.replace(' storey',''):'';
 const specLine=p.beds+' BED'+(p.baths?' · '+p.baths+' BATH':'')+' · '+p.land+'m² LAND'+(p.home?' · '+p.home+'m² HOME':'')+(storeyShort?' · '+storeyShort:'');
  return `<article class="pk rv" data-href="package.html?id=${p.id}" data-area="${p.area}">
-<a class="pk-media" href="package.html?id=${p.id}" aria-label="${p.design} Lot ${p.lot}, ${p.estate} — view package"><div class="pk-art" style="--ph:${grad(p.estate+p.id)}" aria-hidden="true"></div><span class="pk-mono" aria-hidden="true">${p.design.charAt(0).toUpperCase()}</span>${badge(p)}<span class="pk-beds">${p.beds} BED${storeyShort?' · '+storeyShort.toUpperCase():''}</span>
+<a class="pk-media" href="package.html?id=${p.id}" aria-label="${p.design} Lot ${p.lot}, ${p.estate} — view package"><div class="pk-art" style="--ph:${grad(p.estate+p.id)}" aria-hidden="true"></div><span class="pk-mono" aria-hidden="true">${p.design.charAt(0).toUpperCase()}</span>${(window.pkgImg&&window.pkgImg(p))?`<img class="pk-photo" src="${window.pkgImg(p)}" alt="" loading="lazy" onerror="this.remove()">`:''}${badge(p)}<span class="pk-beds">${p.beds} BED${storeyShort?' · '+storeyShort.toUpperCase():''}</span>
 <div class="pk-media-btm"><small>${p.estate} · Lot ${p.lot}</small><b>${p.design}${p.facade?' · '+p.facade:''}</b></div></a>
 <div class="pk-body">
 <p class="pk-loc">${p.suburb} · ${p.area} · <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.estate+' '+p.suburb+' VIC')}">Map</a></p>
