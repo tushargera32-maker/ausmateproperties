@@ -14,6 +14,7 @@ window.PKG_IMG = {
 };
 window.pkgImg = function (p) {
   if (!p) return "";
+  if (window.LISTING_IMG && window.LISTING_IMG[p.id]) return window.LISTING_IMG[p.id];
   if (p.img) return p.img;
   return (window.PKG_IMG.corridor[p.area] || "");
 };
