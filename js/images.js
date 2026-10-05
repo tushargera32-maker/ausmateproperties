@@ -16,5 +16,6 @@ window.pkgImg = function (p) {
   if (!p) return "";
   if (window.LISTING_IMG && window.LISTING_IMG[p.id]) return window.LISTING_IMG[p.id];
   if (p.img) return p.img;
+  if (window.ESTATE_IMG && window.ESTATE_IMG[p.estate]) return window.ESTATE_IMG[p.estate];
   return (window.PKG_IMG.corridor[p.area] || "");
 };

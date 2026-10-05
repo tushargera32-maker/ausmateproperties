@@ -25,3 +25,7 @@ Do NOT copy photos from realestate.com.au / domain.com.au listings — those ima
 ## Listing imagery — West pilot (used on owner's assertion of rights)
 
 Sourced from realestate.com.au suburb category pages (generic marketing renders, not lot-specific). Mapped in js/listing-imgs.js. Site captions label all imagery illustrative.
+
+## Estate gallery imagery (official developer sites, used on owner's assertion of rights)
+
+Second image per estate kept as spare in images/estates/ (not yet wired).
